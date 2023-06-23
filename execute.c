@@ -28,7 +28,7 @@ void execute(char *cmd, stack_t **stack, int line_number)
 	}
 	if (optf[i].opcode == NULL)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s", line_number, op);
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op);
 		fclose(gl_var.fd);
 		free(cmd);
 		free_dlistint(*stack);

@@ -41,6 +41,7 @@ int main(int argc, char *argv[])
 		free(cmd);
 	}
 	free_dlistint(stack);
+	free(cmd);
 	fclose(gl_var.fd);
 	return (0);
 }
