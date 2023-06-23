@@ -38,7 +38,7 @@ typedef struct instruction_s
 /**
  * struct gl_var_s -  Encapsulation of global var in a struct
  * @fd: a pointer to the montu opcode file
- * arg_n: a string with the value of n
+ * @arg_n: a string with the value of n
  */
 typedef struct gl_var_s
 {
