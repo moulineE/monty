@@ -16,7 +16,7 @@ void execute(char *cmd, stack_t **stack, int line_number)
 	};
 
 	op = strtok(cmd, " \n\t");
-	arg_n = strtok(NULL, " \n\t");
+	(gl_var.arg_n) = strtok(NULL, " \n\t");
 	while ((optf[i].opcode != NULL) && (op != NULL))
 	{
 		if (strcmp(op, optf[i].opcode) == 0)
@@ -29,7 +29,7 @@ void execute(char *cmd, stack_t **stack, int line_number)
 	if (optf[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s", line_number, op);
-		fclose(fd);
+		fclose(gl_var.fd);
 		free(cmd);
 		free_dlistint(*stack);
 		exit(EXIT_FAILURE);

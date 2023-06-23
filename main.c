@@ -1,6 +1,5 @@
 #include "monty.h"
-FILE *fd;
-char *arg_n;
+gl_var_t gl_var = {NULL, NULL};
 /**
  * main - interpreter for Monty ByteCodes files.
  * @argc: number of arguments
@@ -23,8 +22,8 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	fd = fopen(argv[1], "r");
-	if (!fd)
+	gl_var.fd = fopen(argv[1], "r");
+	if (!(gl_var.fd))
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
@@ -33,7 +32,7 @@ int main(int argc, char *argv[])
 	{
 		line_number++;
 		cmd = NULL;
-		line_wc = getline(&cmd, &bufsize, fd);
+		line_wc = getline(&cmd, &bufsize, gl_var.fd);
 		if (line_wc < 1)
 		{
 			continue;
@@ -42,6 +41,6 @@ int main(int argc, char *argv[])
 		free(cmd);
 	}
 	free_dlistint(stack);
-	fclose(fd);
+	fclose(gl_var.fd);
 	return (0);
 }

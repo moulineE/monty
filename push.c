@@ -1,26 +1,28 @@
 #include "monty.h"
+/**
+ * _push - function that check if arg_n is 0 - 9 and push to the stack
+ * @stack: a pointer to the top of the stack
+ * @line_number: the line number
+ */
 
 void _push(stack_t **stack, unsigned int line_number)
 {
 	int i = 0;
-	int n;
 
-	if (arg_n == NULL)
+	if (gl_var.arg_n == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		fclose(fd);
+		fclose(gl_var.fd);
 		free_dlistint(*stack);
 		exit(EXIT_FAILURE);
 	}
 
-	if (arg_n[i] > 57 || arg_n[i] < 48)
+	if (gl_var.arg_n[i] > 57 || gl_var.arg_n[i] < 48)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		printf("arg_n: %s", arg_n);
-		fclose(fd);
+		fclose(gl_var.fd);
 		free_dlistint(*stack);
 		exit(EXIT_FAILURE);
 	}
-	n = atoi(arg_n);
-	add_dnodeint(stack, n);
+	add_dnodeint(stack, atoi(gl_var.arg_n));
 }
