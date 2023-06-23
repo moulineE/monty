@@ -16,6 +16,10 @@ void _push(stack_t **stack, unsigned int line_number)
 		free_dlistint(*stack);
 		exit(EXIT_FAILURE);
 	}
+	if (gl_var.arg_n[i] == '-')
+	{
+		i++;
+	}
 	if (gl_var.arg_n[i] > 57 || gl_var.arg_n[i] < 48)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
