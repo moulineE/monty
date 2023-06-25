@@ -11,7 +11,6 @@ void _pop(stack_t **stack, unsigned int line_number)
 	if (read != NULL)
 	{
 		*stack = read->next;
-		(*stack)->prev = NULL;
 		free(read);
 	}
 	else
