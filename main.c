@@ -40,8 +40,8 @@ int main(int argc, char *argv[])
 		execute(cmd, &stack, line_number);
 		free(cmd);
 	}
-	free_dlistint(stack);
 	free(cmd);
+	free_dlistint(stack);
 	fclose(gl_var.fd);
 	return (0);
 }

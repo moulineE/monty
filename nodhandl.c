@@ -3,6 +3,7 @@
 stack_t *add_dnodeint(stack_t **head, const int n);
 void free_dlistint(stack_t *head);
 
+
 /**
  * add_dnodeint - function that adds a new node at the beginning
  * of a dlistint_t list.
