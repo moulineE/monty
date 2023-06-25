@@ -1,5 +1,5 @@
 #include "monty.h"
-gl_var_t gl_var = {NULL, NULL};
+gl_var_t gl_var = {NULL, NULL, NULL};
 /**
  * main - interpreter for Monty ByteCodes files.
  * @argc: number of arguments
@@ -33,11 +33,13 @@ int main(int argc, char *argv[])
 		line_number++;
 		cmd = NULL;
 		line_wc = getline(&cmd, &bufsize, gl_var.fd);
+		gl_var.cmd = cmd;
 		if (line_wc < 1)
 		{
 			continue;
 		}
 		execute(cmd, &stack, line_number);
+
 		free(cmd);
 	}
 	free(cmd);
