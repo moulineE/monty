@@ -12,6 +12,7 @@ void execute(char *cmd, stack_t **stack, int line_number)
 	instruction_t optf[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
 		{NULL, NULL}
 	};
 
