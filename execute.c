@@ -26,6 +26,7 @@ void execute(char *cmd, stack_t **stack, int line_number)
 		{"mod", _mod},
 		{"#", _comment},
 		{"pchar", _pchar},
+		{"pstr", _pstr},
 		{NULL, NULL}
 	};
 
