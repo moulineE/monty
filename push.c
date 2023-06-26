@@ -14,6 +14,8 @@ void _push(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		fclose(gl_var.fd);
 		free_dlistint(*stack);
+		free(gl_var.arg_n);
+		free(gl_var.cmd);
 		exit(EXIT_FAILURE);
 	}
 	if (gl_var.arg_n[i] == '-')
@@ -25,6 +27,8 @@ void _push(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		fclose(gl_var.fd);
 		free_dlistint(*stack);
+		free(gl_var.arg_n);
+		free(gl_var.cmd);
 		exit(EXIT_FAILURE);
 	}
 	add_dnodeint(stack, atoi(gl_var.arg_n));
