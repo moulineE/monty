@@ -7,7 +7,6 @@
 void _pint(stack_t **stack, unsigned int line_number)
 {
 	stack_t *read = *stack;
-	(void)(line_number);
 
 	if (read != NULL)
 	{
