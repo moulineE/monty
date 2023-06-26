@@ -19,6 +19,7 @@ void execute(char *cmd, stack_t **stack, int line_number)
 		{"nop", _nop},
 		{"sub", _sub},
 		{"div", _div},
+		{"mul", _mul},
 		{NULL, NULL}
 	};
 
