@@ -18,8 +18,8 @@ void _rotr(stack_t **stack, unsigned int line_number)
 		last = last->next;
 	}
 	last->prev->next = NULL;
+	last->next = first;
+	last->prev = NULL;
+	(*stack)->prev = last;
 	*stack = last;
-	(*stack)->prev = NULL;
-	(*stack)->next = first;
-	first->prev = *stack;
 }
