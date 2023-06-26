@@ -29,6 +29,10 @@ void execute(char *cmd, stack_t **stack, int line_number)
 	};
 
 	op = strtok(cmd, " \n\t");
+	if (op[0] == '#')
+	{
+		return;
+	}
 	(gl_var.arg_n) = strtok(NULL, " \n\t");
 	while ((optf[i].opcode != NULL) && (op != NULL))
 	{
