@@ -1,4 +1,7 @@
 #include "monty.h"
+
+void execute(char *cmd, stack_t **stack, int line_number);
+void _comment(stack_t **stack, unsigned int line_number);
 /**
  * execute - function that select and execute the correct opreation
  * @cmd: the op code line
@@ -21,6 +24,7 @@ void execute(char *cmd, stack_t **stack, int line_number)
 		{"div", _div},
 		{"mul", _mul},
 		{"mod", _mod},
+		{"#", _comment},
 		{NULL, NULL}
 	};
 
@@ -44,4 +48,14 @@ void execute(char *cmd, stack_t **stack, int line_number)
 		exit(EXIT_FAILURE);
 	}
 return;
+}
+/**
+ * _comment - comment flag
+ * @stack: a pointer to the stack top
+ * @line_number: not use here
+ */
+void _comment(stack_t **stack, unsigned int line_number)
+{
+	(void)(line_number);
+	(void)(stack);
 }
